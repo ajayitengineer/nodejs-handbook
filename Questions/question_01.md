@@ -112,3 +112,42 @@
   - MAJOR.MINOR.PATCH
   - ^4.18.8 -> accept 4.x.x
   - ~4.18.6 -> accept 4.18.x
+
+- What is a module, and what are major module systems in JavaScript?
+  - Module → A file containing reusable code that can be shared across multiple files.
+  - In modern JavaScript, there are mainly two module systems:
+    - CJS (CommonJS) → Default module system in Node.js.
+    - ESM (ECMAScript Modules) → Standardized modern module system
+  - Difference between CJS and ESM:
+    - Syntax:
+      - CJS → require() and module.exports
+      - ESM → import and export
+    - Loading behavior:
+      - CJS → Synchronous (require() blocks execution until module is loaded)
+      - ESM → Asynchronous (top-level import is resolved before script executes)
+    - Dynamic import:
+      - CJS → require() is always synchronous, cannot use dynamic import() at top-level
+      - ESM → Supports dynamic import() at runtime for conditional or lazy loading.
+
+- Node.js Built-in Modules
+  - Node.js has many built-in modules that do not require installation:
+    - fs → File system
+    - path → Path operations
+    - http → HTTP server
+    - os → OS info
+    - crypto → Encryption/Hashing
+
+- What are global objects in Node.js?
+  - Global objects are available everywhere in a Node.js application without importing.
+  - Similar to window in browsers, but Node.js has its own set of globals.
+  - global
+  - process
+  - console
+  - Buffer
+  - setTimeout, setInterval, setImmediate
+  - dirname
+  - filename
+  - module
+  - export
+  - require
+  - Note :- global not available in EMS and **dirname and **filename also not available.
